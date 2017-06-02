@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+		<title>响应式贪吃蛇1701</title>
+		<link rel="stylesheet" href="css/snake.css" />
+	</head>
+	<body>
+		<div id="all">
+			<canvas id="gameview" width="893" height="418"></canvas>
+			<div id="gameover">
+				<div id="fen"></div>
+				<input id="ming" placeholder="输入玩家姓名"/>
+				<button id="save">保存</button>
+				<button id="zaici"></button>
+				<button id="fanhui"></button>
+			</div>
+			<img src="img/music.png" alt="" id="music" />
+			<img src="img/set.jpg" id="set"/>
+			<img src="img/14012210279915.jpg" alt="" id="phb" />
+			<div id="fenshu">0</div>
+			<audio src="img/Blizzard Team - Reaper Of Souls.mp3" id="audio1" autoplay="autoplay"></audio>
+			<div id="setPara">
+				<div id="speed">
+					<span>游戏难度</span>
+					<ul id="level">
+						<li>简单</li>
+						<li>中等</li>
+						<li>困难</li>
+					</ul>
+				</div>
+				<br />
+				<br />
+				<div id="bgImg">
+					<span>游戏背景</span>
+					<ul id="myul1">
+						<li><img src="img/background1.png" alt="" /></li>
+						<li><img src="img/background2.png" alt="" /></li>
+						<li><img src="img/background3.png" class="chong" alt="" /></li>
+						<li><img src="img/background4.png" class="chong" alt="" /></li>
+					</ul>
+				</div>
+				<br />
+				<br />
+				<br />
+				<div id="bodyImg">
+					<span>蛇蛇皮肤</span>
+					<ul id="myul2">
+						<li><img src="img/north1.png" alt="" /></li>
+						<li><img src="img/north2.png" alt="" /></li>
+					</ul>
+				</div>
+				<span class="close">×</span>
+			</div>
+			<div id="PH-all">
+				<span id="xxx">x</span>
+				<div class="paihang"></div>
+			</div>
+			<div id="intro">
+				<p style="font-weight: bold;">操作指南</p>
+				<div style="margin-top:10px">
+					<img src="img/caozuo.png" alt="control" />游戏使用方向键控制
+				</div>
+			</div>
+			<div id="youxi" >
+				<p style="font-weight: bold;">游戏目标</p>
+				<div style="margin-top: 10px;">
+					<img src="img/food.png" alt="xin" width="30px">吃到心加10分
+					<img src="img/apple.png" alt="apple"  />吃到苹果加20分
+					<img src="img/cactus.png"  alt="xianrenzhang"/>吃到仙人掌加30分
+				</div>
+			</div>
+			<button style="display: none;" id="pause">暂停</button>
+			<button style="display: none;" id="continue">继续</button>
+			<button id="chongzhi">充值</button>
+		</div>
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/snake.js"></script>
+		<script>
+			$(function(){
+				var snakegame = new Snake();
+				//1-为canvas加载游戏开始画面，当startImg被加载后执行init方法
+				startImg.onload = function(){
+					snakegame.init();
+				};
+				
+				//2-点击开始界面，游戏开始
+				$("#gameview").click(function(){
+					snakegame.start();
+					$("#set").hide();
+					$("#music").hide();
+					$("#phb").css("display","none");
+					$("#fenshu").show();
+					$("#chongzhi").hide();
+					$("#pause").show();
+					$("#continue").show();
+				});
+				
+				//点击重新开始
+				$("#zaici").click(function(){
+					snakegame.isClick=true;
+					$("#gameover").css("display","none");
+					snakegame.start();
+					$("#fenshu").show();
+					$("#fenshu").html("0");
+					$("#chongzhi").hide();
+					$("#pause").show();
+					$("#continue").show();
+				})
+				
+				//暂停和继续
+				$("#pause").click(function(){
+					clearInterval(snakegame.timer);
+					
+				});
+				$("#continue").click(function(){
+					clearInterval(snakegame.timer);
+				 	snakegame.move()
+				});
+
+				//返回界面
+				$("#fanhui").click(function(){
+					snakegame.isClick=true;
+					$("#set").show();
+					$("#music").show();
+					$("#phb").css("display","block");
+					$("#gameover").css("display","none");
+					snakegame.init();
+					$("#fenshu").hide();
+					$("#chongzhi").show();
+					$("#pause").hide();
+					$("#continue").hide();
+				});
+				
+				//3-音乐播放
+				var flag = true; //设置音乐播放暂停标识位，true--播放  false--暂停
+	 			$("#music").click(function(){
+	 				if(flag == true){
+	 					$("#audio1")[0].pause();
+						$("#music").attr("src","img/click-music.jpg");
+						flag = false;
+					}else{
+						$("#audio1")[0].play();
+						$("#music").attr("src","img/music.png");
+						flag = true;
+					}
+	 			});
+	 			
+	 			//4-设置
+	 			$("#set").click(function(){
+	 				$("#setPara").css("display","block");
+	 			});
+	 			
+	 			$(".close").click(function(){
+	 				$("#setPara").css("display","none");
+	 			});
+	 			
+	 			$("#myul1 img").click(function(){
+	 				$("#myul1 img").css("opacity","");
+	 				$(this).css("opacity","1");
+	 			});
+	 			
+	 			$("#myul2 img").click(function(){
+	 				$("#myul2 img").css("opacity","");
+	 				$(this).css("opacity","1");
+	 			});
+	 			
+	 			$("#level li").click(function(){
+	 				$("#level li").css("opacity","");
+	 				$(this).css("opacity","1");
+	 			});
+	 			
+				//1-1'直接进入游戏界面
+//				bgImg.onload = function(){
+//					snakegame.start();
+//				};
+				
+				$("#phb").click(function(){
+					$("#PH-all").css("display","block");
+					
+				});
+				$("#xxx").click(function(){
+					$("#PH-all").css("display","none");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>响应式贪吃蛇1701</title>
+	</head>
+	<body>
+		<!--<h3 id="title">开始游戏</h3>-->
+		<canvas id="gameview" width="500" height="500"></canvas>
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(function(){
+				//1-为canvas添加画笔
+				var ctx = $("#gameview")[0].getContext("2d")
+				
+				//2-为游戏加载图片
+				//2-1为游戏加载游戏开始后背景图片
+				var bgImage = new Image();
+				bgImage.src = "img/background.png";
+				//2-2为游戏加载游戏开始画面，最先加载的写在最后保证在显示该图片时其他图片也已经加载完毕
+				var startImage = new Image();
+				startImage.src = "img/start.png";
+				
+				//由于图片加载机制不同，直接写下列语句chrome无效(同时执行，加载速度决定显示与否)，firefox有效(先加载，后执行)
+				//3-因此，在图片加载完毕后再执行canvas的画图方法
+				startImage.onload = function(){
+					ctx.drawImage(startImage,0,0,500,500);//cancas图片显示  起始位置、宽度、高度
+				};
+				
+				//4-点击开始游戏
+				$("#gameview").click(function(){
+					
+					ctx.drawImage(bgImage,0,0,500,500);
+				});
+				
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,660 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+#gameover{
+	width: 500px;
+    height: 320px;
+    border-radius: 60px;
+    background-color: #4e3934;
+    background: url(../img/over.png) no-repeat;
+    background-size: 501px 325px;
+    position: absolute;
+    top: 57px;
+    left: 193px;
+    display: none;
+}
+
+#fen{
+	position: absolute;
+    top: 40%;
+    left: 36%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#zaici{
+	width: 137px;
+    height: 47px;
+	position: absolute;
+	top: 71%;
+	left: 58%;
+	font-size: 18px;
+	font-weight: bold;
+	background:url(../img/chongzhi.png) no-repeat;
+	background-size: 137px 47px;
+	border-radius:10px ;
+	border: none;
+}
+
+#fanhui{
+	width: 137px;
+    height: 47px;
+	position: absolute;
+	top: 71%;
+	left: 17%;
+	font-size: 18px;
+	font-weight: bold;
+	background: url(../img/fanhui.png) no-repeat;
+	background-size: 137px 47px;
+	border-radius:10px ;
+	border: none;
+}
+
+#all{
+	position: relative;
+	margin-left: 10px;
+	margin-top:10px;
+}
+
+#music{
+	width:50px;
+	height:50px;
+	position: absolute;
+	top:368px;
+	left:0px;
+	border-radius: 15px;
+}
+
+#set{
+	width:50px;
+	height:50px;
+	position: absolute;
+	top:368px;
+	left:843px;
+	border-radius: 15px;
+}
+
+#youxi{
+	position: absolute;
+	top:425px;
+	left:387px;
+}
+
+#intro{
+	position: absolute;
+	top:425px;
+	left:0px;
+}
+
+#setPara{
+	width:700px;
+	height:350px;
+	background: rgba(0,0,0,0.9);
+	position: absolute;
+	top:37px;
+	left:94px;
+	display:none;
+	color:white;
+}
+
+.close{
+	    position: absolute;
+	    top: 15px;
+	    right: 35px;
+	    color: #f1f1f1;
+	    font-size: 40px;
+	    font-weight: bold;
+	    transition: 0.3s;
+	    cursor: pointer;
+}
+	
+#myul1 li{
+	width: 21%;
+    height: 10%;
+	list-style: none;
+	float: left;
+	cursor: pointer;
+}
+
+#myul1 li img{
+	width:120px;
+	height:60px;
+	opacity: 0.3;
+}
+
+#myul1 li img:hover{
+	opacity: 1;
+}
+
+#myul2 li{
+	width: 7%;
+    height: 10%;
+	list-style: none;
+	float: left;
+	cursor: pointer;
+	margin-right:20px;
+}
+
+#myul2 li img{
+	width:40px;
+	height:40px;
+	opacity: 0.3;
+}
+
+#myul2 li img:hover{
+	opacity: 1;
+}
+
+#level li{
+	list-style: none;
+	float:left;
+	width:100px;
+	height:30px;
+	background: indianred;
+	margin-right:10px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	opacity: 0.3;
+}
+
+#level li:hover{
+	opacity: 1;
+}
+
+#phb{
+	position: absolute;
+	top:0px;
+	left:756px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+#PH-all{
+	width:200px;
+	height:418px;
+	background: red;
+	position: absolute;
+	top:0px;
+	left:893px;
+}
+
+#fenshu{
+	width: 88px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 756px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 22px;
+    margin-left: 25px;
+    margin-top: 20px;
+    display: none; 
+}
+
+#ming{
+	width: 124px;
+    height: 26px;
+    position: absolute;
+    top: 152px;
+    left: 140px;
+    background: blue;
+    line-height: 53px;
+    text-align: center;
+    background-color: papayawhip;
+    margin-left: 25px;
+    margin-top: 20px;
+    border-style:none;
+}
+
+#save{
+	position: absolute;
+    top: 142px;
+    left: 276px;
+    background-color: papayawhip;
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 46px;
+    height: 26px;
+    border-style:none;
+}
+
+#paihang{
+	position: absolute;
+	top:149px;
+	left:45px;
+}
+.paihang{
+	position: absolute;
+	top: 6px;
+	left: 22px;
+}
+
+.chong{
+	display: none;
+}
+
+#speed{
+	margin:22px 0px 20px 110px;
+}
+#bgImg{
+	margin-left: 110px;
+	margin-top: 15px;
+}
+#bodyImg{
+	margin-left: 110px;
+	margin-top: 45px;
+}
+#setPara span{
+	display: block;
+	margin-bottom: 10px;
+}
+#PH-all{
+	background-color: indianred;
+	background-position: 220px -20px;
+	display: none;
+}
+
+#paihang{
+	background-color: papayawhip;
+	margin-left:25px ;
+
+}
+#xxx{
+	font-size:22px ;
+	margin-left: 180px;
+	cursor: pointer;
+}
+#chongzhi{
+	width: 100px;
+    height: 28px;
+    background: #a02a27;
+    border-style: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    top: 41px;
+    left: 779px;
+}
+
+#pause{
+	width: 100px;
+    height: 28px;
+    background: #a02a27;
+    border-style: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+}
+
+#continue{
+	width: 100px;
+    height: 28px;
+    background: #a02a27;
+    border-style: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    top:10%;
+}
+
+/*PC端响应式*/
+@media screen and (max-width: 800px) {
+
+   #all{
+		width: 100%;
+	}
+	
+	#continue{
+		display: none;
+	}
+	#pause{
+		display: none;
+	}
+	
+	#gameview{
+		width: 100%;
+	}
+	
+	#gameover{
+		width: 70%;
+	    height: 67%;
+	    border-radius: 15%;
+	    background-size: 100%;
+	    position: absolute;
+	    top: 16%;
+	    left: 15%;
+	}
+	
+	#zaici{
+		width: 22%;
+	    height: 24%;
+	    position: absolute;
+	    top: 74%;
+	    left: 24%;
+	    background:url(../img/chongzhi.png) no-repeat;
+	    background-size: 100%;
+	}
+	
+	#fanhui{
+		width: 22%;
+	    height: 24%;
+		position: absolute;
+		top: 74%;
+	    left: 58%;
+		background: url(../img/fanhui.png) no-repeat;
+		background-size:100%;
+		border-radius:10px ;
+		border: none;
+	}
+
+	#music{
+		width:5%;
+		height:10%;
+		position: absolute;
+		top:88%;
+		left:0;
+	}
+
+	#set{
+		width:5%;
+		height:10%;
+		position: absolute;
+		top:88%;
+		left:93%;
+	}
+
+	#intro{
+		position: absolute;
+		top:98%;
+		left:0px;
+		font-size:12px;
+	}
+	
+	#youxi{
+		position: absolute;
+		top:98%;
+		left:38%;
+		font-size:12px;
+	}
+
+	#setPara {
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: -1%;
+	    left: 0%;
+	}
+	
+	#myul1 li img{
+		width: 100%;
+   		height: 0%;
+
+	}
+	
+	#myul1 li img:hover{
+		opacity: 1;
+	}
+	
+	#myul2 li{
+		list-style: none;
+		float: left;
+		cursor: pointer;
+		margin-right:20px;
+	}
+	
+	#myul2 li img{
+		width: 66%;
+   		height: 0%;
+		opacity: 0.5;
+		margin-right: 0px;
+	}
+	
+	#myul2 li img:hover{
+		opacity: 1;
+	}
+	
+	#level li{
+		width:18%;
+		height:10%;
+		margin-right:48px;
+	}
+	
+	#phb{
+		position: absolute;
+		top:0px;
+		left:81%;
+		width: 16%;
+	}
+	
+	#PH-all{
+		position: absolute;
+	    top: 17%;
+    	left: 14%;
+	    width: 69%;
+	    height: 63%;
+	}
+	
+	#setPara span{
+	    margin-bottom: 0%;
+	    margin-left: -11%;
+	}
+	
+	#xxx{
+		margin-left:93%;
+	}
+	
+	#ming{
+		width: 21%;
+	    height: 11%;
+	    position: absolute;
+	    top: 48%;
+	    left: 27%;
+	}
+	
+	#save{
+		width: 10%;
+	    height: 11%;
+	    position: absolute;
+	    top: 44%;
+	    left: 51%;
+	}
+	#chongzhi{
+		width: 10%;
+	    height: 7%;
+	    background: #a02a27;
+	    border-style: none;
+	    color: white;
+	    font-weight: bold;
+	    border-radius: 5px;
+	    position: absolute;
+	    top: 9%;
+	    left: 84%;
+	}
+
+}
+
+/*手机端响应*/
+@media screen and (max-width: 414px) {
+
+   #all{
+		width: 100%;
+		margin-left: 0px;
+		margin-top:0px;
+	}
+	
+	#gameview{
+		width: 414px;
+	}
+
+	#music{
+		width:13%;
+		height:7%;
+		position: absolute;
+		top:92%;
+		left:0px;
+	}
+
+	#set{
+		width:13%;
+		height:7%;
+		position: absolute;
+		top:92%;
+	    left:86%;
+	}
+
+	#intro{
+		position: absolute;
+		top:775px;
+		left:0px;
+	}
+
+	#setPara{
+		width: 80%;
+	    height: 60%;
+	    margin-left: 10%;
+	    margin-top: 10%;
+	}
+	
+	#myul1 li img:hover{
+		opacity: 1;
+	}
+	
+	#myul1 li{
+		width:34%;
+	}
+	
+	#myul2 li{
+		
+		list-style: none;
+		float: left;
+		cursor: pointer;
+		margin-right:20px;
+	}
+	
+	#myul2 li img{
+		width:40px;
+		height:40px;
+		opacity: 0.5;
+		display: inline-block;
+	}
+	
+	#myul2 li img:hover{
+		opacity: 1;
+	}
+	
+	#level li{
+		margin-right:168px;
+	}
+	
+	#phb{
+		position: absolute;
+		top:0px;
+		left:74%;
+		width: 25%;
+	}
+	
+	#setPara span{
+		
+	    margin-bottom: 18px;
+	    margin-left: -91px;
+	}
+	
+	#youxi{
+		position: absolute;
+		top:104%;
+		left:40%;
+		font-size:12px;
+	}
+	
+	#gameover{
+		width: 94%;
+	    height: 23%;
+	    border-radius: 15%;
+	    background-size: 100%;
+	    position: absolute;
+	    top: 32%;
+	    left: 4%;
+	}
+	
+	#zaici{
+		width: 22%;
+	    height: 24%;
+	    position: absolute;
+	    top: 74%;
+	    left: 24%;
+	    background:url(../img/chongzhi.png) no-repeat;
+	    background-size: 100%;
+	}
+	
+	#fanhui{
+		width: 22%;
+	    height: 24%;
+		position: absolute;
+		top: 74%;
+	    left: 58%;
+		background: url(../img/fanhui.png) no-repeat;
+		background-size:100%;
+		border-radius:10px ;
+		border: none;
+	}
+	
+	#ming{
+		width: 21%;
+	    height: 11%;
+	    position: absolute;
+	    top: 48%;
+	    left: 27%;
+	}
+	
+	#save{
+		width: 10%;
+	    height: 11%;
+	    position: absolute;
+	    top: 42%;
+	    left: 51%;
+	}
+	
+	#fen{
+		position: absolute;
+	    top: 40%;
+	    left: 32%;
+	    font-size: 18px;
+	    font-weight: bold;
+	}
+	
+	#fenshu{
+		width:15%;
+		top: 1%;
+    	left: 76%;
+	}
+	#chongzhi{
+		width: 14%;
+	    height: 3%;
+	    background: #a02a27;
+	    border-style: none;
+	    color: white;
+	    font-weight: bold;
+	    border-radius: 5px;
+	    position: absolute;
+	    top: 5%;
+	    left: 80%;
+	}
+	#pause{
+	    position: absolute;
+	}
+	
+	#continue{
+	    position: absolute;
+	    top:100%;
+	    left:26%;
+	}
+
+}
